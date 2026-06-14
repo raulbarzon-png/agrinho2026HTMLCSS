@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgroBov Control | Cadastro</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topo">
+    <nav class="menu">
+      <a class="logo" href="index.html">AgroBov Control</a>
+      <button class="menu-botao" id="menuBotao" aria-label="Abrir menu">☰</button>
+      <div class="links" id="menuLinks">
+        <a href="index.html">Início</a>
+        <a href="cadastro.html">Cadastro</a>
+        <a href="sustentabilidade.html">Sustentabilidade</a>
+        <a href="relatorios.html">Relatórios</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="pagina">
+    <section class="cabecalho-pagina">
+      <p class="etiqueta">Gestão do rebanho</p>
+      <h1>Cadastro de animais</h1>
+      <p>Preencha os dados do animal. As informações ficam salvas no navegador usando JavaScript puro.</p>
+    </section>
+
+    <section class="painel-formulario">
+      <form id="formAnimal" class="formulario">
+        <input type="hidden" id="animalId">
+
+        <label for="nome">Nome ou identificação</label>
+        <input type="text" id="nome" placeholder="Ex: Boi 01, Mimosa, Bezerro A12" required>
+
+        <label for="raca">Raça</label>
+        <select id="raca" required>
+          <option value="">Selecione</option>
+          <option value="Nelore">Nelore</option>
+          <option value="Angus">Angus</option>
+          <option value="Gir">Gir</option>
+          <option value="Girolando">Girolando</option>
+          <option value="Holandesa">Holandesa</option>
+          <option value="Outra">Outra</option>
+        </select>
+
+        <div class="duas-colunas">
+          <div>
+            <label for="peso">Peso em kg</label>
+            <input type="number" id="peso" min="1" placeholder="Ex: 350" required>
+          </div>
+          <div>
+            <label for="idade">Idade em meses</label>
+            <input type="number" id="idade" min="0" placeholder="Ex: 24" required>
+          </div>
+        </div>
+
+        <label for="vacina">Situação da vacina</label>
+        <select id="vacina" required>
+          <option value="Em dia">Em dia</option>
+          <option value="Pendente">Pendente</option>
+        </select>
+
+        <label for="pasto">Tipo de pastagem</label>
+        <select id="pasto" required>
+          <option value="Rotacionado">Rotacionado</option>
+          <option value="Convencional">Convencional</option>
+          <option value="Recuperação">Em recuperação</option>
+        </select>
+
+        <label for="observacao">Observações</label>
+        <textarea id="observacao" rows="3" placeholder="Ex: precisa de reforço de vacina, animal vendido, bezerro recém-nascido"></textarea>
+
+        <button class="botao" type="submit">Salvar animal</button>
+        <button class="botao secundario" type="button" id="limparFormulario">Limpar formulário</button>
+      </form>
+
+      <div class="resumo-lateral">
+        <h2>Resumo rápido</h2>
+        <p>Total de animais</p>
+        <strong id="totalAnimais">0</strong>
+        <p>Vacinas pendentes</p>
+        <strong id="vacinasPendentes">0</strong>
+        <p>Peso médio</p>
+        <strong id="pesoMedio">0 kg</strong>
+      </div>
+    </section>
+
+    <section class="lista-area">
+      <h2>Animais cadastrados</h2>
+      <div class="tabela-responsiva">
+        <table>
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Raça</th>
+              <th>Peso</th>
+              <th>Idade</th>
+              <th>Vacina</th>
+              <th>Pastagem</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="listaAnimais"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Organização rural e sustentabilidade no mesmo sistema.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script src="js/cadastro.js"></script>
+</body>
+</html>

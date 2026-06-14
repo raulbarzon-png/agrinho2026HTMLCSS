@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgroBov Control | Sustentabilidade</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topo">
+    <nav class="menu">
+      <a class="logo" href="index.html">AgroBov Control</a>
+      <button class="menu-botao" id="menuBotao" aria-label="Abrir menu">☰</button>
+      <div class="links" id="menuLinks">
+        <a href="index.html">Início</a>
+        <a href="cadastro.html">Cadastro</a>
+        <a href="sustentabilidade.html">Sustentabilidade</a>
+        <a href="relatorios.html">Relatórios</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="pagina">
+    <section class="cabecalho-pagina">
+      <p class="etiqueta">Produção consciente</p>
+      <h1>Indicador de sustentabilidade</h1>
+      <p>Informe dados da propriedade para calcular um índice simples de equilíbrio entre produção e cuidado ambiental.</p>
+    </section>
+
+    <section class="painel-formulario">
+      <form id="formSustentabilidade" class="formulario">
+        <label for="aguaDia">Consumo de água por dia em litros</label>
+        <input type="number" id="aguaDia" min="0" placeholder="Ex: 1200" required>
+
+        <label for="areaPasto">Área de pastagem em hectares</label>
+        <input type="number" id="areaPasto" min="1" placeholder="Ex: 20" required>
+
+        <label for="manejoSolo">Manejo do solo</label>
+        <select id="manejoSolo" required>
+          <option value="30">Rotação de pastagem e solo protegido</option>
+          <option value="20">Algumas práticas sustentáveis</option>
+          <option value="10">Pouco controle do solo</option>
+        </select>
+
+        <label for="energia">Uso de energia</label>
+        <select id="energia" required>
+          <option value="25">Energia solar ou economia ativa</option>
+          <option value="15">Uso moderado de energia</option>
+          <option value="5">Alto consumo sem controle</option>
+        </select>
+
+        <label for="residuos">Destino dos resíduos</label>
+        <select id="residuos" required>
+          <option value="25">Compostagem, reciclagem ou reaproveitamento</option>
+          <option value="15">Separação parcial</option>
+          <option value="5">Sem controle definido</option>
+        </select>
+
+        <button class="botao" type="submit">Calcular índice</button>
+      </form>
+
+      <div class="card-indice">
+        <h2>Resultado</h2>
+        <div class="circulo" id="indiceValor">0</div>
+        <p id="indiceTexto">Preencha os dados para calcular.</p>
+      </div>
+    </section>
+
+    <section class="grade dicas">
+      <article class="card">
+        <h3>Economia de água</h3>
+        <p>Evite vazamentos, monitore bebedouros e use irrigação planejada.</p>
+      </article>
+      <article class="card">
+        <h3>Pastagem rotacionada</h3>
+        <p>Ajuda a recuperar o solo e melhora a alimentação do rebanho.</p>
+      </article>
+      <article class="card">
+        <h3>Vacinação em dia</h3>
+        <p>Animais saudáveis produzem melhor e reduzem prejuízos na propriedade.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>Produzir com responsabilidade é cuidar do futuro.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script src="js/sustentabilidade.js"></script>
+</body>
+</html>

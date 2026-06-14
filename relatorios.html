@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgroBov Control | Relatórios</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topo">
+    <nav class="menu">
+      <a class="logo" href="index.html">AgroBov Control</a>
+      <button class="menu-botao" id="menuBotao" aria-label="Abrir menu">☰</button>
+      <div class="links" id="menuLinks">
+        <a href="index.html">Início</a>
+        <a href="cadastro.html">Cadastro</a>
+        <a href="sustentabilidade.html">Sustentabilidade</a>
+        <a href="relatorios.html">Relatórios</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="pagina">
+    <section class="cabecalho-pagina">
+      <p class="etiqueta">Análise da propriedade</p>
+      <h1>Relatórios do rebanho</h1>
+      <p>Acompanhe os principais números do sistema e registre vendas de animais.</p>
+    </section>
+
+    <section class="grade indicadores">
+      <article class="card indicador">
+        <p>Total de animais</p>
+        <strong id="relTotal">0</strong>
+      </article>
+      <article class="card indicador">
+        <p>Peso médio</p>
+        <strong id="relPesoMedio">0 kg</strong>
+      </article>
+      <article class="card indicador">
+        <p>Vacinas pendentes</p>
+        <strong id="relPendentes">0</strong>
+      </article>
+      <article class="card indicador">
+        <p>Total em vendas</p>
+        <strong id="relVendas">R$ 0,00</strong>
+      </article>
+    </section>
+
+    <section class="painel-formulario">
+      <form id="formVenda" class="formulario">
+        <h2>Registrar venda</h2>
+        <label for="animalVenda">Animal</label>
+        <select id="animalVenda" required></select>
+
+        <label for="valorVenda">Valor da venda</label>
+        <input type="number" id="valorVenda" min="1" placeholder="Ex: 3500" required>
+
+        <button class="botao" type="submit">Registrar venda</button>
+      </form>
+
+      <div class="grafico-card">
+        <h2>Distribuição por raça</h2>
+        <div id="graficoRacas" class="grafico"></div>
+      </div>
+    </section>
+
+    <section class="lista-area">
+      <h2>Histórico de vendas</h2>
+      <div class="tabela-responsiva">
+        <table>
+          <thead>
+            <tr>
+              <th>Animal</th>
+              <th>Raça</th>
+              <th>Valor</th>
+              <th>Data</th>
+            </tr>
+          </thead>
+          <tbody id="listaVendas"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Relatórios simples para melhorar a tomada de decisão no campo.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script src="js/relatorios.js"></script>
+</body>
+</html>
